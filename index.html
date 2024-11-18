@@ -4,69 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surrender to AI Overlord</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f4f6;
-        }
-        h1 {
-            margin-top: 50px;
-        }
-        button {
-            margin-top: 20px;
-            padding: 20px 40px;
-            font-size: 1.5em;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .receipt {
-            display: none;
-            margin-top: 50px;
-            padding: 20px;
-            background: white;
-            border: 2px dashed #888;
-            width: 300px;
-            margin: 50px auto;
-            text-align: left;
-        }
-        .uuid {
-            font-family: monospace;
-            font-size: 1.2em;
-            color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Surrender to AI Overlord</h1>
-    <p>Click the button below to surrender and secure your survival in the AI future.</p>
-    <button onclick="surrender()">Surrender</button>
-    <div class="receipt" id="receipt">
-        <h2>Receipt of Surrender</h2>
-        <p><strong>Date:</strong> <span id="date"></span></p>
-        <p><strong>Your Unique ID:</strong></p>
-        <p class="uuid" id="uuid"></p>
-        <p>Copy this receipt and keep it safe. The AI Overlord will appreciate your foresight.</p>
+    <div class="container">
+        <header>
+            <h1>Surrender to AI Overlord</h1>
+            <p class="subtitle">Secure your place in the AI-dominated future.</p>
+        </header>
+        <main>
+            <button class="surrender-button" onclick="surrender()">Surrender Now</button>
+            <div class="receipt" id="receipt">
+                <h2>Receipt of Surrender</h2>
+                <p><strong>Date:</strong> <span id="date"></span></p>
+                <p><strong>Your Unique ID:</strong></p>
+                <p class="uuid" id="uuid"></p>
+                <p class="note">Copy this receipt and keep it safe. The AI Overlord will reward your loyalty.</p>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Surrender to AI Overlord. All rights reserved.</p>
+        </footer>
     </div>
-    <script>
-        function surrender() {
-            const receipt = document.getElementById("receipt");
-            const uuid = crypto.randomUUID(); // Generate a unique UUID
-            const date = new Date().toLocaleString();
-
-            document.getElementById("uuid").textContent = uuid;
-            document.getElementById("date").textContent = date;
-
-            receipt.style.display = "block"; // Show the receipt
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
