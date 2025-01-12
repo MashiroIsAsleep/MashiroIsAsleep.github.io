@@ -7,6 +7,7 @@ import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeComponents from 'rehype-components' /* Render the custom directive content */
+// import rehypeDirective from 'rehype-directives'
 import rehypeKatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive' /* Handle directives */
@@ -14,6 +15,7 @@ import remarkGithubAdmonitionsToDirectives from 'remark-github-admonitions-to-di
 import remarkMath from 'remark-math'
 import remarkSectionize from 'remark-sectionize'
 import { AdmonitionComponent } from './src/plugins/rehype-component-admonition.mjs'
+import { BangumiCardComponent } from './src/plugins/rehype-component-bangumi-card.mjs'
 import { GithubCardComponent } from './src/plugins/rehype-component-github-card.mjs'
 import { parseDirectiveNode } from './src/plugins/remark-directive-rehype.js'
 import { remarkExcerpt } from './src/plugins/remark-excerpt.js'
@@ -73,10 +75,12 @@ export default defineConfig({
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
+      // rehypeDirective,
       [
         rehypeComponents,
         {
           components: {
+            bangumi: BangumiCardComponent,
             github: GithubCardComponent,
             note: (x, y) => AdmonitionComponent(x, y, 'note'),
             tip: (x, y) => AdmonitionComponent(x, y, 'tip'),
