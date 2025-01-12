@@ -1,4 +1,4 @@
-;<reference types='mdast' />
+///<reference types='mdast' />
 import { h } from 'hastscript'
 
 /**
