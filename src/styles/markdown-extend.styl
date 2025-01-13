@@ -243,3 +243,126 @@ a.card-github.fetch-error
   transition-property: all
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
   transition-duration: 0.15s
+
+
+a.card-bangumi
+  display: block
+  background: var(--license-block-bg)
+  position: relative
+  margin: 0.5rem 0
+  padding: 1.1rem 1.5rem 1.1rem 1.5rem
+  color: var(--tw-prose-body)
+  border-radius: var(--radius-large)
+  text-decoration-thickness: 0px
+  text-decoration-line: none
+
+  &:hover
+    background-color: var(--btn-regular-bg-hover)
+
+    .bc-name-container
+      color: var(--btn-content)
+
+      &:before
+        background-color: var(--tw-prose-headings)
+
+  &:active
+    scale: .98
+    background-color: var(--btn-regular-bg-active);
+
+  .bc-name-container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 0.5rem
+    color: var(--tw-prose-headings)
+    font-size: 1.25rem
+    font-weight: 500
+
+    /*
+    .gc-titlebar-left
+      display: flex
+      flex-flow: row nowrap
+      gap: 0.5rem
+    */
+
+    .bc-nickname
+      font-weight: bold
+
+    .bc-username
+      font-weight: 300
+      position: relative
+      display: flex
+      flex-flow: row nowrap
+      gap: 0.5rem
+      align-items: center
+
+    .bc-avatar
+      display: block
+      overflow: hidden
+      width: 1.5rem
+      height: 1.5rem
+      margin-top: -0.1rem
+      background-color: var(--primary)
+      background-size: cover
+      border-radius: 50%
+
+  .bc-sign
+    margin-bottom: 0.7rem
+    font-size: 1rem
+    font-weight: 300
+    line-height: 1.5rem
+    color: var(--tw-prose-body)
+
+  .bc-additional-info
+    display: flex
+    flex-flow: row nowrap
+    gap: 1.5rem
+    color: var(--tw-prose-body)
+    width: fit-content
+
+
+  .bc-usergroup, .bc_userid
+    font-weight: 500
+    font-size: 0.875rem
+    opacity: 0.9;
+
+    &:before
+      content: ' '
+      display: inline-block
+      height: 1.3em
+      width: 1.3em
+      margin-right: .4rem
+      vertical-align: -.24em
+      font-size: inherit
+      background-color: var(--tw-prose-body)
+      overflow: visible
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+      transition-property: background-color, background;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+      transition-duration: 0.15s
+  
+  &.fetch-waiting
+    pointer-events: none
+    opacity: 0.7
+    transition: opacity 0.15s ease-in-out
+
+    .bc-avatar, .bc-nickname, .bc-username, .bc-sign, .bc-usergroup, .bc-userid
+      background-color: var(--tw-prose-body)
+      color: transparent
+      opacity: 0.5
+      animation: pulsate 2s infinite linear
+      user-select: none
+
+  &.fetch-error
+    pointer-events: all
+    opacity: 1
+
+@keyframes pulsate
+  0%
+    opacity: 0.15
+  50%
+    opacity: 0.25
+  100%
+    opacity: 0.15
