@@ -1,23 +1,13 @@
 /// <reference types="mdast" />
 import { h } from 'hastscript'
 
-/**
- * Creates a Bangumi Card component.
- *
- * @param {Object} properties - The properties for the component.
- * @param {string} properties.user - The Bangumi user ID or username.
- * @param {import('mdast').RootContent[]} children - The children elements of the component.
- * @returns {import('mdast').Parent} The created Bangumi Card component.
- */
 export function BangumiCardComponent(properties, children) {
-  // Ensure leaf directive (no children allowed)
   if (Array.isArray(children) && children.length !== 0) {
     return h('div', { class: 'hidden' }, [
       'Invalid directive. ("bangumi" must be a leaf type "::bangumi{user="username"}")',
     ])
   }
 
-  // Validate user property
   if (!properties.user) {
     return h(
       'div',
@@ -29,7 +19,6 @@ export function BangumiCardComponent(properties, children) {
   const user = properties.user
   const cardUuid = `BC${Math.random().toString(36).slice(-6)}`
 
-  // Create placeholders
   const nAvatar = h(`div#${cardUuid}-avatar`, { class: 'bc-avatar' })
   const nNickname = h(
     `div#${cardUuid}-nickname`,
@@ -53,34 +42,29 @@ export function BangumiCardComponent(properties, children) {
     'Loading…',
   )
 
-  // Create the card element
   const cardEl = h(
     `a#${cardUuid}-card`,
     {
-      class: 'card-bangumi fetch-waiting no-styling',
+      class: 'card-bangumi fetch-waiting',
       href: `https://bangumi.tv/user/${user}`,
       target: '_blank',
       rel: 'noopener noreferrer',
       'data-user': user,
       'data-card-uuid': cardUuid,
+      style: 'text-decoration: none; color: inherit;',
     },
     [
-      // Left Side: Avatar and User Details
       h('div', { class: 'bc-user-card' }, [
         nAvatar,
         h('div', { class: 'bc-user-details' }, [
-          // Combine Nickname and Username
           h('div', { class: 'bc-name-container' }, [nNickname, nUsername]),
-          // Bio below
           nSign,
         ]),
       ]),
-      // Right Side: User Group and User ID
       h('div', { class: 'bc-additional-info' }, [nUserGroup, nUserId]),
     ],
   )
 
-  // Inject the script that runs in the browser
   const nScript = h(
     `script#${cardUuid}-script`,
     { type: 'text/javascript', defer: true },
@@ -167,7 +151,6 @@ export function BangumiCardComponent(properties, children) {
     `,
   )
 
-  // Append the script to the card element
   cardEl.children.push(nScript)
 
   return cardEl

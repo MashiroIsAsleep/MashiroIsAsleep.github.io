@@ -10,7 +10,6 @@
   border-radius: 8px;
   background-color: #eee;
   transition: box-shadow 0.3s;
-  max-width: 600px; /* Adjust as needed */
   margin: 16px 0; /* Spacing around the card */
   text-decoration: none; /* Remove underline from link */
   color: inherit; /* Inherit text color */
