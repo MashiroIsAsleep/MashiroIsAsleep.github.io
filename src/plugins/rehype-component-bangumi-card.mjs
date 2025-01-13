@@ -44,10 +44,9 @@ export function BangumiCardComponent(properties, children) {
   const cardEl = h(
     `a#${cardUuid}-card`,
     {
-      class: 'card-bangumi fetch-waiting',
+      class: 'card-bangumi fetch-waiting no-styling',
       href: `https://bangumi.tv/user/${user}`,
       target: '_blank',
-      rel: 'noopener noreferrer',
       'data-user': user,
       'data-card-uuid': cardUuid,
       style: 'text-decoration: none; color: inherit;',
