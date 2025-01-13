@@ -53,15 +53,14 @@ export function BangumiCardComponent(properties, children) {
     'Loading…',
   )
 
-  // Return the anchor that wraps the placeholders
-  return h(
+  // Create the card element
+  const cardEl = h(
     `a#${cardUuid}-card`,
     {
       class: 'card-bangumi fetch-waiting no-styling',
       href: `https://bangumi.tv/user/${user}`,
       target: '_blank',
       rel: 'noopener noreferrer',
-      // Pass data attributes for client-side JS
       'data-user': user,
       'data-card-uuid': cardUuid,
     },
@@ -80,4 +79,103 @@ export function BangumiCardComponent(properties, children) {
       h('div', { class: 'bc-additional-info' }, [nUserGroup, nUserId]),
     ],
   )
+
+  // Inject the script that runs in the browser
+  const nScript = h(
+    `script#${cardUuid}-script`,
+    { type: 'text/javascript', defer: true },
+    `
+      (function() {
+        console.log("[BANGUMI-CARD] Script executing for user: ${user}");
+        fetch('https://api.bgm.tv/v0/users/${user}')
+          .then(function(response) {
+            if (!response.ok) throw new Error(response.status + " " + response.statusText);
+            return response.json();
+          })
+          .then(function(data) {
+            console.log("[BANGUMI-CARD] Data fetched:", data);
+            
+            // Update Avatar
+            var avatarUrl = data.avatar && (data.avatar.large || data.avatar.medium || data.avatar.small);
+            if (avatarUrl) {
+              var avatarEl = document.getElementById('${cardUuid}-avatar');
+              if (avatarEl) {
+                avatarEl.style.backgroundImage = 'url(' + avatarUrl + ')';
+                avatarEl.style.backgroundColor = 'transparent';
+              }
+            }
+
+            // Update Nickname
+            var nickname = data.nickname || '${user}';
+            var nicknameEl = document.getElementById('${cardUuid}-nickname');
+            if (nicknameEl) {
+              nicknameEl.innerText = nickname;
+            }
+
+            // Update Username
+            var usernameEl = document.getElementById('${cardUuid}-username');
+            if (usernameEl) {
+              usernameEl.innerText = '@' + data.username;
+            }
+
+            // Update Sign (Bio)
+            var sign = data.sign || "No signature available";
+            var signEl = document.getElementById('${cardUuid}-sign');
+            if (signEl) {
+              signEl.innerText = sign;
+            }
+
+            // Update User Group
+            var userGroup = data.user_group || "N/A";
+            var userGroupEl = document.getElementById('${cardUuid}-usergroup');
+            if (userGroupEl) {
+              userGroupEl.innerText = "Groups attended: " + userGroup;
+            }
+
+            // Update User ID
+            var userId = data.id || "N/A";
+            var userIdEl = document.getElementById('${cardUuid}-userid');
+            if (userIdEl) {
+              userIdEl.innerText = "ID: " + userId;
+            }
+
+            // Remove fetch-waiting class once data is loaded
+            var cardEl = document.getElementById('${cardUuid}-card');
+            if (cardEl) {
+              cardEl.classList.remove('fetch-waiting');
+            }
+
+            console.log("[BANGUMI-CARD] Loaded card for ${user} | ${cardUuid}.");
+          })
+          .catch(function(err) {
+            console.error("[BANGUMI-CARD] (Error) Loading card for ${user}:", err);
+            var cardEl = document.getElementById('${cardUuid}-card');
+            if (cardEl) {
+              cardEl.classList.add('fetch-error');
+            }
+            var nicknameEl = document.getElementById('${cardUuid}-nickname');
+            if (nicknameEl) {
+              nicknameEl.innerText = "Error loading user";
+            }
+            var signEl = document.getElementById('${cardUuid}-sign');
+            if (signEl) {
+              signEl.innerText = "";
+            }
+            var userGroupEl = document.getElementById('${cardUuid}-usergroup');
+            if (userGroupEl) {
+              userGroupEl.innerText = "";
+            }
+            var userIdEl = document.getElementById('${cardUuid}-userid');
+            if (userIdEl) {
+              userIdEl.innerText = "";
+            }
+          });
+      })();
+    `,
+  )
+
+  // Append the script to the card element
+  cardEl.children.push(nScript)
+
+  return cardEl
 }
