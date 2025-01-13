@@ -20,17 +20,16 @@ export function BangumiCardComponent(properties, children) {
   const cardUuid = `BC${Math.random().toString(36).slice(-6)}`
 
   const nAvatar = h(`div#${cardUuid}-avatar`, { class: 'bc-avatar' })
-  const nNickname = h(
-    `div#${cardUuid}-nickname`,
-    { class: 'bc-nickname' },
-    'Loading…',
-  )
-  const nUsername = h(
-    `span#${cardUuid}-username`,
-    { class: 'bc-username' },
-    `@${user}`,
+  const nNicknameLine = h(
+    `div#${cardUuid}-nickname-line`,
+    { class: 'bc-nickname-line' },
+    [
+      h(`div#${cardUuid}-nickname`, { class: 'bc-nickname' }, 'Loading…'),
+      h(`span#${cardUuid}-username`, { class: 'bc-username' }, `@${user}`),
+    ],
   )
   const nSign = h(`div#${cardUuid}-sign`, { class: 'bc-sign' }, 'Loading…')
+
   const nUserGroup = h(
     `div#${cardUuid}-usergroup`,
     { class: 'bc-usergroup' },
@@ -56,10 +55,7 @@ export function BangumiCardComponent(properties, children) {
     [
       h('div', { class: 'bc-user-card' }, [
         nAvatar,
-        h('div', { class: 'bc-user-details' }, [
-          h('div', { class: 'bc-name-container' }, [nNickname, nUsername]),
-          nSign,
-        ]),
+        h('div', { class: 'bc-user-details' }, [nNicknameLine, nSign]),
       ]),
       h('div', { class: 'bc-additional-info' }, [nUserGroup, nUserId]),
     ],
