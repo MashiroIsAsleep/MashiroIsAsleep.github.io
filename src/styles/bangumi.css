@@ -3,32 +3,20 @@
 /* Container for the Bangumi Card */
 .card-bangumi {
   display: flex;
-  position: relative;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1.1rem 1.5rem;
-  border-radius: var(--radius-large);
-  background-color: var(--license-block-bg);
-  color: var(--tw-prose-body);
+  padding: 16px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  background-color: #eee;
   transition: box-shadow 0.3s;
-  margin: 0.5rem 0; /* Spacing around the card */
-  text-decoration: none; /* Remove text decorations */
+  margin: 16px 0; /* Spacing around the card */
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
 }
 
-/* Remove text decorations from all child elements */
-.card-bangumi * {
-  text-decoration: none;
-  color: inherit; /* Ensure color inheritance for links */
-}
-
-/* Hover Effects */
 .card-bangumi:hover {
-  background-color: var(--btn-regular-bg-hover);
-}
-
-.card-bangumi:hover .bc-username,
-.card-bangumi:hover .bc-nickname {
-  color: var(--btn-content);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Left Side: Avatar and User Details */
