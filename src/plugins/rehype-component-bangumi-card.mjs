@@ -83,7 +83,6 @@ export function BangumiCardComponent(properties, children) {
           .then(function(data) {
             console.log("[BANGUMI-CARD] Parsed data:", data);
             
-            // Update Avatar
             var avatarUrl = data.avatar && (data.avatar.large || data.avatar.medium || data.avatar.small);
             if (avatarUrl) {
               console.log("[BANGUMI-CARD] Updating avatar...");
