@@ -95,7 +95,6 @@ export function BangumiCardComponent(properties, children) {
           .then(function(data) {
             console.log("[BANGUMI-CARD] Data fetched:", data);
             
-            // Update Avatar
             var avatarUrl = data.avatar && (data.avatar.large || data.avatar.medium || data.avatar.small);
             if (avatarUrl) {
               var avatarEl = document.getElementById('${cardUuid}-avatar');
@@ -105,41 +104,35 @@ export function BangumiCardComponent(properties, children) {
               }
             }
 
-            // Update Nickname
             var nickname = data.nickname || '${user}';
             var nicknameEl = document.getElementById('${cardUuid}-nickname');
             if (nicknameEl) {
               nicknameEl.innerText = nickname;
             }
 
-            // Update Username
             var usernameEl = document.getElementById('${cardUuid}-username');
             if (usernameEl) {
               usernameEl.innerText = '@' + data.username;
             }
 
-            // Update Sign (Bio)
             var sign = data.sign || "No signature available";
             var signEl = document.getElementById('${cardUuid}-sign');
             if (signEl) {
               signEl.innerText = sign;
             }
 
-            // Update User Group
             var userGroup = data.user_group || "N/A";
             var userGroupEl = document.getElementById('${cardUuid}-usergroup');
             if (userGroupEl) {
               userGroupEl.innerText = "Groups attended: " + userGroup;
             }
 
-            // Update User ID
             var userId = data.id || "N/A";
             var userIdEl = document.getElementById('${cardUuid}-userid');
             if (userIdEl) {
               userIdEl.innerText = "ID: " + userId;
             }
 
-            // Remove fetch-waiting class once data is loaded
             var cardEl = document.getElementById('${cardUuid}-card');
             if (cardEl) {
               cardEl.classList.remove('fetch-waiting');
