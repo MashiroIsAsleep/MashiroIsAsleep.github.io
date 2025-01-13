@@ -98,7 +98,6 @@ export function BangumiCardComponent(properties, children) {
               console.warn("[BANGUMI-CARD] Avatar URL not found in data.");
             }
 
-            // Update Nickname
             var nickname = data.nickname || '${user}';
             var nicknameEl = document.getElementById('${cardUuid}-nickname');
             if (nicknameEl) {
@@ -108,7 +107,6 @@ export function BangumiCardComponent(properties, children) {
               console.error("[BANGUMI-CARD] Nickname element not found.");
             }
 
-            // Update Username
             var usernameEl = document.getElementById('${cardUuid}-username');
             if (usernameEl) {
               usernameEl.innerText = '@' + data.username;
@@ -117,7 +115,6 @@ export function BangumiCardComponent(properties, children) {
               console.error("[BANGUMI-CARD] Username element not found.");
             }
 
-            // Update Sign (Bio)
             var sign = data.sign || "No signature available";
             var signEl = document.getElementById('${cardUuid}-sign');
             if (signEl) {
@@ -127,7 +124,6 @@ export function BangumiCardComponent(properties, children) {
               console.error("[BANGUMI-CARD] Sign element not found.");
             }
 
-            // Update User Group
             var userGroup = data.user_group || "N/A";
             var userGroupEl = document.getElementById('${cardUuid}-usergroup');
             if (userGroupEl) {
@@ -137,7 +133,6 @@ export function BangumiCardComponent(properties, children) {
               console.error("[BANGUMI-CARD] User group element not found.");
             }
 
-            // Update User ID
             var userId = data.id || "N/A";
             var userIdEl = document.getElementById('${cardUuid}-userid');
             if (userIdEl) {
@@ -147,7 +142,6 @@ export function BangumiCardComponent(properties, children) {
               console.error("[BANGUMI-CARD] User ID element not found.");
             }
 
-            // Remove fetch-waiting class once data is loaded
             var cardEl = document.getElementById('${cardUuid}-card');
             if (cardEl) {
               cardEl.classList.remove('fetch-waiting');
