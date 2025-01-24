@@ -8,11 +8,11 @@ Welcome to Mashiro's blogging site! Probably gonna be yapping about life, anime,
 
 I am Mashiro, you might also know me as Demian.
 
-Here's what defines me:
+A little bit about me:
 
-- 17 years old, currently living in New York.
-- Enjoys material science and art.
+- 17 yo, currently living in New York.
 - Watches a lot of anime, reads a lot.
+- Not a tryhard but rather kinda stupid.
 - Plays: Guitar, Bass, Keyboard, Violin, learning how to make music.
 
 Find some of my anime analysis at:
@@ -36,10 +36,6 @@ Markdown etension for Bangumi user profolio:
 
 ::github{repo="MashiroIsAsleep/BangumiUserCard"}
 
-Simple script that helps Bangumi-ers convert their posts to Markdown.
-
-::github{repo="MashiroIsAsleep/BBcodeToMarkdown"}
-
 x86 assembly snake game for DOS that runs on boot sector of a floppy disk:
 
 ::github{repo="MashiroIsAsleep/BootSectSnake"}
@@ -47,15 +43,6 @@ x86 assembly snake game for DOS that runs on boot sector of a floppy disk:
 iOS budget tracking app:
 
 ::github{repo="MashiroIsAsleep/BudgetBuddy"}
-
----
-
-## My Bucket List
-
-- Get PhD degree
-- Host my own server
-- Go Skydiving
-- Release an album
 
 ---
 
