@@ -186,19 +186,8 @@ const bannerOffset =
 		];
 
         window.addEventListener('load', () => {
-            const character = new arkpets.Character(
-                "1", 
-                (e) => arkpets.showContextMenu(e, character, {
-                    getCharacterModels: () => CHARACTER_RESOURCES,
-                }),
-                CHARACTER_RESOURCES[1],
-            );
-            console.log("Character initialized", character);
-        });
-
-        window.addEventListener('load', () => {
             const character0 = new arkpets.Character(
-                "0", 
+                "1", 
                 (e) => arkpets.showContextMenu(e, character0, {
                     getCharacterModels: () => CHARACTER_RESOURCES,
                 }),
