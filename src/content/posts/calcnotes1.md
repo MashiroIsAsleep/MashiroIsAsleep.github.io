@@ -1,9 +1,9 @@
 ---
-title: Chapter 1 - Limits and Contnuity
+title: CalcBC Ch1 - Limits and Contnuity
 published: 2025-03-28
 description: 'Notes on AP calcBC chapter 1'
 image: ''
-tags: [Notes, AP, Math]
+tags: [Notes, Math, CalcBC]
 category: 'Notes-笔记'
 draft: false
 lang: 'en'
