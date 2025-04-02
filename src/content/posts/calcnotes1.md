@@ -6,7 +6,7 @@ image: ''
 tags: [Notes, Math, CalcBC]
 category: 'Notes-笔记'
 draft: false
-lang: 'en'
+lang: 'en' 
 ---
 
 ## Chapter 1: Limits and Continuity
