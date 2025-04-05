@@ -5,7 +5,7 @@ description: 'Notes on AP calcBC chapter 4'
 image: ''
 tags: [Notes, Math, CalcBC]
 category: 'Notes-笔记'
-draft: false
+draft: true
 lang: 'en'
 ---
 
