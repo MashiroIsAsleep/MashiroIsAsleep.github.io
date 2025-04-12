@@ -26,12 +26,6 @@ export default defineConfig({
   site: 'https://mashiroisasleep.github.io/',
   base: '/',
   trailingSlash: 'always',
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true, // set to false when using @vercel/analytics@1.4.0
-    },
-  }),
   integrations: [
     tailwind({
       nesting: true,
