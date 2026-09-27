@@ -1,0 +1,38 @@
+# MashiroIsAsleep.github.io
+
+Personal site built with [Astro](https://astro.build/), Svelte, Tailwind CSS, and Node.js tooling. It is a static site; a separate Node server is not required.
+
+## Local setup
+
+Prerequisites:
+
+- Node.js 20 or newer (Node 20 is used by the deployment workflow)
+- pnpm 9.14.4
+
+With `nvm` and Corepack:
+
+```sh
+nvm use
+corepack enable
+corepack prepare pnpm@9.14.4 --activate
+pnpm install --frozen-lockfile
+pnpm dev
+```
+
+The development site is available at `http://localhost:4321` by default.
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `pnpm dev` | Start the Astro development server |
+| `pnpm check` | Run Astro and TypeScript diagnostics |
+| `pnpm build` | Build the static site and Pagefind search index |
+| `pnpm preview` | Preview the production build locally |
+| `pnpm format` | Format source files with Biome |
+| `pnpm lint` | Check and apply Biome fixes |
+| `pnpm new-post` | Create a new post through the Node helper script |
+
+Site content lives in `src/content`, static files live in `public`, and the generated site is written to `dist`.
+
+Pushes to `main` are built and deployed to GitHub Pages by `.github/workflows/deploy.yml`.

@@ -153,7 +153,7 @@ const bannerOffset =
 
 		<canvas id="arkpets-canvas"></canvas>
 
-		<script src="/arkpets/arkpets.js" defer></script>
+		<script is:inline src="/arkpets/arkpets.js" defer></script>
 
 		<script>
 		const RESOURCE_PATH = "/assets/models/";
@@ -368,7 +368,7 @@ const setup = () => {
 			heightExtend.classList.remove('hidden')
 		}
 	});
-	window.swup.hooks.on('visit:end', (visit) => {
+	window.swup.hooks.on('visit:end', () => {
 		setTimeout(() => {
 			const heightExtend = document.getElementById('page-height-extend')
 			if (heightExtend) {

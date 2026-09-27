@@ -1,8 +1,9 @@
-import type { AstroIntegration } from '@swup/astro'
+import type Swup from '@swup/astro/client/Swup'
 
 declare global {
+  const arkpets: typeof import('../public/arkpets/globals').default
+
   interface Window {
-    // type from '@swup/astro' is incorrect
-    swup: AstroIntegration
+    swup: Swup
   }
 }

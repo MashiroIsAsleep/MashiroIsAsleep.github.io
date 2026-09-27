@@ -4,7 +4,7 @@ published: 2025-04-09
 description: 'Notes on AP calcBC chapter 9'
 image: ''
 tags: [Notes, Math, CalcBC]
-category: 'Notes-笔记'
+category: 'Notes'
 draft: true
 lang: 'en'
 ---
