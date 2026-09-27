@@ -2,6 +2,7 @@
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
+import 'katex/dist/katex.min.css'
 import { profileConfig, siteConfig } from '@/config'
 import ConfigCarrier from '@components/ConfigCarrier.astro'
 
@@ -130,12 +131,6 @@ const bannerOffset =
 
 		<slot name="head"></slot>
 
-		<link
-			rel="stylesheet"
-			href="https://cdn.staticfile.net/KaTeX/0.16.9/katex.min.css"
-			integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
-			crossorigin="anonymous"
-		/>
 		<link
 			rel="alternate"
 			type="application/rss+xml"
