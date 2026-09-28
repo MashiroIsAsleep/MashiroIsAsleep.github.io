@@ -45,6 +45,6 @@ iOS budget tracking app:
 
 ---
 
-## Currently reading:
+## Currently reading
 
-none
+Demon
