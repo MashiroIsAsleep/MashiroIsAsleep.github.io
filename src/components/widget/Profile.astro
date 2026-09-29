@@ -23,6 +23,10 @@ const config = profileConfig
         <div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
         <div class="text-center text-neutral-400 mb-2.5 transition">{config.bio}</div>
         <div class="flex gap-2 justify-center mb-1">
+            <a href={url('/rss.xml')} data-swup-ignore aria-label="Subscribe via RSS" title="Subscribe via RSS"
+               class="btn-regular rounded-lg h-10 w-10 active:scale-90">
+                <Icon name="fa6-solid:rss" class="text-[1.5rem]"></Icon>
+            </a>
             {config.links.length > 1 && config.links.map(item =>
                     <a rel="me" aria-label={item.name} href={item.url} target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90">
                         <Icon name={item.icon} class="text-[1.5rem]"></Icon>
@@ -36,4 +40,3 @@ const config = profileConfig
         </div>
     </div>
 </div>
-
