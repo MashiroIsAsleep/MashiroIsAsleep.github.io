@@ -26,7 +26,7 @@ const isPublic = src.startsWith('/')
 // https://github.com/withastro/astro/issues/3373
 let img
 if (isLocal) {
-  const files = import.meta.glob<ImageMetadata>('../../**', {
+  const files = import.meta.glob<ImageMetadata>('../../**/*.{avif,gif,jpeg,jpg,png,svg,tiff,webp}', {
     import: 'default',
   })
   let normalizedPath = path
@@ -47,4 +47,3 @@ const imageStyle = `object-position: ${position}`
     {isLocal && img && <Image src={img} alt={alt || ""} class={imageClass} style={imageStyle}/>}
     {!isLocal && <img src={isPublic ? url(src) : src} alt={alt || ""} class={imageClass} style={imageStyle}/>}
 </div>
-

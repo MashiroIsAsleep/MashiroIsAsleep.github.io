@@ -1,3 +1,6 @@
+/* Resolve Markdown's @apply link in the same Tailwind compilation. */
+@import './markdown.css';
+
 @tailwind components;
 
 @layer components {
