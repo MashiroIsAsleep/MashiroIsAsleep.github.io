@@ -146,8 +146,7 @@ const bannerOffset =
 		<ConfigCarrier />
 		<slot />
 
-		<canvas id="arkpets-canvas"></canvas>
-
+		<!-- ArkPets creates and positions its own canvas. -->
 		<script is:inline src="/arkpets/arkpets.js" defer></script>
 
 		<script>
@@ -195,18 +194,6 @@ const bannerOffset =
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
 	</body>
 </html>
-
-<style>
-	#arkpets-canvas {
-	  position: fixed;
-	  bottom: 0;
-	  right: 0;
-	  width: 200px; 
-	  height: 200px; 
-	  pointer-events: auto;
-	  z-index: 9999;
-	}
-</style>
 
 <style is:global define:vars={{
 	bannerOffset,
