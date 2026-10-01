@@ -9,35 +9,35 @@ draft: false
 lang: ''
 ---
 
-## Methods of proof.
+## Methods of proof
 
-### 1. proof by Induction.
+### 1. proof by Induction
 
 Thm (Principal of induction).
 
 let $P(n)$ be a statement about natural numbers.
 
-#### i) Ordinary Induction.
+#### i Ordinary Induction
 
-Suppose. a) $P(1)$ is true
+Suppose. a $P(1)$ is true
 
-b) for every $n > 1$, $P(n-1) \rightarrow P(n)$
+b for every $n > 1$, $P(n-1) \rightarrow P(n)$
 
 Then $P(n)$ is true for all $n \ge 1$
 
-#### ii) Strong Induction.
+#### ii Strong Induction
 
 fix $m \in \mathbb{N}$ Suppose.
 
-c) $P(m)$ is true.
+c $P(m)$ is true.
 
-d) for every $n > m$, if $P(k)$ is true for all $m \le k \le n$
+d for every $n > m$, if $P(k)$ is true for all $m \le k \le n$
 
 then $P(n)$ is true.
 
 Then $P(n)$ is true for every $n \ge m$
 
-#### Example-1.
+#### Example-1
 
 for every $n \ge 1$.
 
@@ -71,7 +71,7 @@ $$
 \end{aligned}
 $$
 
-#### Example 2.
+#### Example 2
 
 Claim: Every finite collection of cats has the same eye color.
 
@@ -91,7 +91,7 @@ $\uparrow$
 
 The problem came from missing base case $n = 2$.
 
-### 2. Proof by well ordering.
+### 2. Proof by well ordering
 
 Theorem (Well ordering principal.)
 
@@ -123,7 +123,7 @@ So $P(m)$ is true by our assumption.
 
 So $m \notin S$. ↯.
 
-### 3. Disproof by Counterexample.
+### 3. Disproof by Counterexample
 
 Example. The assertion.
 
@@ -137,7 +137,7 @@ Take $a = 6$, $b = 4$, $c = 9$.
 
 $a \mid bc$ but $a \nmid b$ & $a \nmid c$.
 
-### 4. Pigeonhole Principal.
+### 4. Pigeonhole Principal
 
 Thm (pigeonhole principal).
 
@@ -145,7 +145,7 @@ If $n$ objects are placed in $k$ boxes and $n > k$.
 
 Then at least 1 box contain at least 2 objects.
 
-#### Stronger form of pigeonhole principal.
+#### Stronger form of pigeonhole principal
 
 for a real number $x$.
 
@@ -165,7 +165,7 @@ Example. 217 student. in ma1a.
 
 Atl one section has $\left\lceil \dfrac{217}{10} \right\rceil = 22$ Students.
 
-## Equivalence relation.
+## Equivalence relation
 
 Defn. An equivalence relation on a set. is a relation, usually denoted by $\sim$, satisfying the following 3 properties for all elements of the set.
 
@@ -177,7 +177,7 @@ We can decompose set $X$ into disjoint unions of subsets. Where every subset con
 
 - Each subset is called equivalence class.
 
-### Example.
+### Example
 
 Consider $X = \{(a, b) \mid a, b \in \mathbb{N}\}$
 
